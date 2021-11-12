@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #order{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label>Lunch Menu</label><br>
+        <select name="lunch-item" id="lunch-item" >
+            <option value="No item">Option</option>
+            <option value="50">plain rice <span id="rice">+</span></option>
+            <option value="70">Zeera rice</option>
+            <option value="60">Kadi rice</option>
+            <option value="55">chole rice</option>
+            <option value="45">daal rice</option>
+        </select>
+        <select name="lunch-item" id="lunch-item" >
+            <option value="65">Palak Paneer</option>
+            <option value="60">matar Paneer</option>
+            <option value="75">Kadai Paneer</option>
+            <option value="40">Mix Veg</option>
+            <option value="35">Anda Cari</option>
+        </select>
+        <select name="lunch-item" id="lunch-item">
+            <option value="0">Cold-Drink</option>
+            <option value="0">Ice-Cream</option>
+        </select>
+        <button id="cost">Cost</button>
+        
+    </div>
+    <h3 id="order">Your order</h3>
+    <h3 id="ordershow"></h3>
+    <div id="demo">
+       
+    </div>
+    <div id="dinner">
+
+    </div>
+    <div>
+       <h4 id="total"></h4>
+    </div>
+
+
+    
+
+
+    <script>
+        let cost = document.getElementById("cost");
+        var count = 0;
+
+        cost.addEventListener('click',function(){
+            count++;
+        document.getElementById('order').style.display = 'block'; //Lunch Item select
+        let lunch = document.getElementById("lunch-item");
+        // let lunch = document.getElementsByTagName('select');
+        let text = lunch.options[lunch.selectedIndex].text;
+        let value = lunch.options[lunch.selectedIndex].value;
+        // let dinner = document.getElementById('dinner-item');       
+        // let dinnerText = dinner.options[dinner.selectedIndex].text;
+        // let dinnerValue = dinner.options[dinner.selectedIndex].value;
+        let showItem = document.createElement('li');
+        showItem.innerHTML = text + '=' + value;
+        demo.appendChild(showItem);
+        let total = 0;
+        total += value;
+        document.getElementById('total').innerHTML  = 'Total Price = ' + total;
+        for(var i=0; i<=count; i++){
+           
+        }
+        document.getElementById('ordershow').innerHTML = 'Your select item is = ' + i;
+        })
+        
+        
+
+
+        
+    </script>
+</body>
+</html>
+<!-- var e = document.getElementById("selectElementID");
+var value=e.options[e.selectedIndex].value;// get selected option value
+var text=e.options[e.selectedIndex].text; -->
