@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #content{
+            width: 300px;
+            margin: auto;
+            background-color: rgb(236, 230, 230);
+            text-align: center;
+            border-radius: 15px;
+            box-shadow: 0px 0px 2px 3px rgb(214, 212, 212); 
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h3>TO DO LIST..</h3>
+        <input type="text" id="inputfield"><button id="addtodo">+</button>
+        <div class="to-dos" id="todocontainer">
+            
+        </div>
+        <h4>double click remove your item</h4>
+    </div>
+
+    <script>
+
+        let addtodobutton = document.getElementById('addtodo');
+        let todocontainer = document.getElementById('todocontainer');
+        let inputfield  = document.getElementById('inputfield');
+
+        addtodobutton.addEventListener('click', function(){
+            var paragraph = document.createElement('li');
+            paragraph.innerText = inputfield.value; 
+            todocontainer.appendChild(paragraph);
+
+            paragraph.addEventListener('click',function(){
+                paragraph.style.backgroundColor = "#b2bfba";
+            })
+
+            paragraph.addEventListener('dblclick',function(){
+                todocontainer.removeChild(paragraph);
+            })
+        })
+    </script>
+    
+</body>
+</html>
